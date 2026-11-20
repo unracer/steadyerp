@@ -48,6 +48,11 @@ export default defineConfig({
             '^/api': {
                 target,
                 secure: false
+            },
+            '^/chathub': {
+                target,
+                secure: false,
+                ws: true
             }
         },
         port: 5173,

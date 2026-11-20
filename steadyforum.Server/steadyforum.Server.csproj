@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\Class.cs" />
     <Compile Remove="Service\ErpManager.cs" />
     <Compile Remove="Service\ManufactureQueue.cs" />
     <Compile Remove="Service\Postal.cs" />

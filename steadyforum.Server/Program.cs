@@ -17,6 +17,9 @@ builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v2", new OpenApiInfo { Title
 
 builder.Services.AddTransient<NewsCrawler>();
 
+builder.Services.AddSignalR(o => o.MaximumReceiveMessageSize = 10 * 1024 * 1024);
+
+
 //builder.Services.AddTransient<NewsBrowser>();
 //builder.Services.AddTransient<INewsBrowser, DorkBrowser>();
 //builder.Services.AddTransient<INewsBrowser, StockBrowser>();
@@ -46,6 +49,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<ChatHub>("/chathub");
 
 app.MapFallbackToFile("/index.html");
 
