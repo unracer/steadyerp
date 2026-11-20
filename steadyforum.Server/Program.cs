@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using steadyforum.Server.Controllers;
 using steadyforum.Server.Data;
+using steadyforum.Server.Service;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<steadyforumServerContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("steadyforumServerContext") ?? throw new InvalidOperationException("Connection string 'steadyforumServerContext' not found.")));
@@ -14,7 +15,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v2", new OpenApiInfo { Title = "MVCCallWebAPI", Version = "v2" });});
 
-builder.Services.AddTransient<NewsBrowser>();
+builder.Services.AddTransient<NewsCrawler>();
 
 //builder.Services.AddTransient<NewsBrowser>();
 //builder.Services.AddTransient<INewsBrowser, DorkBrowser>();

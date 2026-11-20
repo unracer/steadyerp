@@ -1,7 +1,7 @@
 import './assets/main.css'
 
 import * as Vue from 'vue'
-/*npm install vue-router*/
+/*npm install vue-router*/  
 import * as VueRouter from 'vue-router'
 /*npm install vue-cookies*/
 import VueCookies from 'vue-cookies';

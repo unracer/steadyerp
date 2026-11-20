@@ -10,14 +10,17 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace steadyforum.Server.Service
 {
-    public class PLCpipe
+    public class PlcPipe
     {
         public string Title { get; set; }
         //Siemens Simatic S7 Web Apps and API
-        public int S7loader()
+        public int S7HotLoader()
         {
             var url_api = "https://192.168.178.50/awp/AnalogInputs/api.io";
-            var payload = "{ '\"webHMIData\".webHMI_DO0_User': str(do0).lower(), '\"webHMIData\".webHMI_DO1_User': str(do1).lower()}";
+            var payload = "{ " +
+                "'\"webHMIData\".webHMI_DO0_User': str(do0).lower(), " +
+                "'\"webHMIData\".webHMI_DO1_User': str(do1).lower()" +
+                "}";
             var S7cert = "";
 
             HttpWebRequest httpRequest = (HttpWebRequest)HttpWebRequest.Create(url_api);

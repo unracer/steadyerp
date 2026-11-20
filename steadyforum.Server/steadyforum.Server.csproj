@@ -17,6 +17,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Service\ErpManager.cs" />
+    <Compile Remove="Service\ManufactureQueue.cs" />
+    <Compile Remove="Service\Postal.cs" />
+    <Compile Remove="Service\PostalAuditor.cs" />
+    <Compile Remove="Service\StockAuditor.cs" />
+    <Compile Remove="Service\Suply.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Service\ErpManager.cs" />
+    <None Include="Service\ManufactureQueue.cs" />
+    <None Include="Service\Postal.cs" />
+    <None Include="Service\PostalAuditor.cs" />
+    <None Include="Service\StockAuditor.cs" />
+    <None Include="Service\Suply.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.5.1" />
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
       <Version>8.*-*</Version>

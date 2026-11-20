@@ -222,7 +222,7 @@
     }
 
     #newsBody {        
-        height: 31em;
+        height: 33em;
         overflow: hidden;
         line-height: 120%;
         font-size: 0.9em;
@@ -273,6 +273,7 @@
         border-radius: 2em;
         border: #ff000036;
         position: absolute;
+        top: 1em;
         right: 1em;
         box-shadow: 0px 0px 5px 0px rgb(179 0 0 / 50%);
     }

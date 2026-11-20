@@ -3,26 +3,30 @@
     import chatpage from './chat-page.vue'
     import shoppage from './shop-page.vue'
     import erppage from './erp-page.vue'
+    import ad from './ad-item.vue'
 </script>
 
 <template>
+    <ad />
+
     <div class="slidercontainer">
         <input type="radio" name="slider" id="item-1" checked>
-        <input type="radio" name="slider" id="item-2" >
-        <input type="radio" name="slider" id="item-3" >
-        <input type="radio" name="slider" id="item-4" >
+        <input type="radio" name="slider" id="item-2">
+        <input type="radio" name="slider" id="item-3">
+        <input type="radio" name="slider" id="item-4">
         <div class="slidercards">
-            <label class="slidercard" for="item-1" id="sliderforumcard"> <!--what for - check delete id for this-->
+            <label class="slidercard" for="item-1" id="sliderforumcard">
+                <!--what for - check delete id for this-->
                 <forumpage />
             </label>
             <label class="slidercard" for="item-2" id="sliderchatcard">
-                <chatpage/>
+                <chatpage />
             </label>
             <label class="slidercard" for="item-3" id="slidershopcard">
-                <shoppage /> 
+                <shoppage />
             </label>
             <label class="slidercard" for="item-4" id="slidererpcard">
-                <erppage /> 
+                <!--<erppage />-->
             </label>
         </div>
         <div class="player">
@@ -181,7 +185,7 @@
         object-fit: cover;
     }
 
-/*доделать четверту.ю страницу*/
+    /*доделать четверту.ю страницу*/
     #item-1:checked ~ .slidercards #slidershopcard, #item-2:checked ~ .slidercards #sliderforumcard, #item-3:checked ~ .slidercards #sliderchatcard {
         transform: translateX(-40%) scale(.8);
         opacity: .4;
@@ -193,29 +197,50 @@
         transform: translateX(40%) scale(.8);
         opacity: .4;
         z-index: 0;
-        filter: blur(5px);
+        filter: blur(5px);        
     }
 
     #item-1:checked ~ .slidercards #sliderforumcard, #item-2:checked ~ .slidercards #sliderchatcard, #item-3:checked ~ .slidercards #slidershopcard {
         transform: translateX(0) scale(1);
         opacity: 1;
         z-index: 1;
-    } 
+    }
     #item-1:checked ~ .slidercards #sliderforumcard, #item-2:checked ~ .slidercards #sliderchatcard, #item-3:checked ~ .slidercards #slidershopcard {
         transform: translateX(0) scale(1);
         opacity: 1;
         z-index: 1;
-    } 
-     img
+        
+    }
 
-    {
+
+    #item-1:checked ~ .player {
+        background-color: #37000ced;
+        transition: background-color 0.4s ease;
+    }
+
+    #item-2:checked ~ .player {
+        background-color: #0a0c12f2;
+        transition: background-color 0.4s ease;
+    }
+
+    #item-3:checked ~ .player {
+        background-color: #0a120ff2;
+        transition: background-color 0.4s ease;
+    }
+
+    #item-4:checked ~ .player {
+        background-color: #37000ced;
+        transition: background-color 0.4s ease;
+    }
+
+
+    img {
         box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
     }
 
     
 
     .player {
-        background-color: #fff;
         border-radius: 8px;
         min-width: 320px;
         padding: 16px 10px;
@@ -306,24 +331,24 @@
     }
 
     #sliderforumcard {
-        background-color: #140000d1;
         box-shadow: 0px 0px 100px 0px rgb(0 0 0);
         border-radius: 10px;
         object-fit: cover;
         color: #ff6c00;
+        background-color: #37000ced;
     }
 
     #sliderchatcard {
-        background-color: #0a0c12f2;
         box-shadow: 0px 0px 100px 0px rgb(0 0 0);
         border-radius: 10px;
         object-fit: cover;
+        background-color: #0a0c12f2;        
     }
 
     #slidershopcard {
-        background-color: #0a120ff2;
         box-shadow: 0px 0px 100px 0px rgb(0 0 0);
         border-radius: 10px;
         object-fit: cover;
+        background-color: #0a120ff2;
     }
 </style>
